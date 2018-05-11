@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Smart.MFB.ERP.Common.Core</RootNamespace>
     <AssemblyName>Smart.MFB.ERP.Common.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -39,8 +42,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +53,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoreModuleDefinition.cs" />
+    <Compile Include="Entities\AddressType.cs" />
+    <Compile Include="Entities\ApplicantReg.cs" />
+    <Compile Include="Entities\AuditTrail.cs" />
+    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\Country.cs" />
+    <Compile Include="Entities\Group.cs" />
+    <Compile Include="Entities\GroupRole.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\Menu.cs" />
+    <Compile Include="Entities\MenuRole.cs" />
+    <Compile Include="Entities\Module.cs" />
+    <Compile Include="Entities\ModuleCategory.cs" />
+    <Compile Include="Entities\Religion.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\State.cs" />
+    <Compile Include="Entities\SucriberAccount.cs" />
+    <Compile Include="Entities\Theme.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserGroup.cs" />
+    <Compile Include="Enum\AuditAction.cs" />
+    <Compile Include="Enum\Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportModuleDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Smart.MFB.ERP.Common\Smart.MFB.ERP.Common.csproj">
+      <Project>{a10fb47d-18a8-43c0-867e-39055c3f284e}</Project>
+      <Name>Smart.MFB.ERP.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

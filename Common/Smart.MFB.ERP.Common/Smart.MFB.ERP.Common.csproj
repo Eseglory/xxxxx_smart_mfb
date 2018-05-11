@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Smart.MFB.ERP.Common</RootNamespace>
     <AssemblyName>Smart.MFB.ERP.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -38,9 +41,21 @@
       <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.7.5.2\lib\net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +63,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDataRepository.cs" />
+    <Compile Include="Contracts\IDataRepositoryFactory.cs" />
+    <Compile Include="Contracts\IDirtyCapable.cs" />
+    <Compile Include="Contracts\IIdentifiableEntity.cs" />
+    <Compile Include="Contracts\IServiceContract.cs" />
+    <Compile Include="Contracts\IServiceFactory.cs" />
+    <Compile Include="Core\CollectionBase.cs" />
+    <Compile Include="Core\EntityBase.cs" />
+    <Compile Include="Core\ItemPropertyChangedEventArgs.cs" />
+    <Compile Include="Core\ItemPropertyChangedEventHandler.cs" />
+    <Compile Include="Core\NotificationObject.cs" />
+    <Compile Include="Core\NotNavigableAttribute.cs" />
+    <Compile Include="Core\ObjectBase.cs" />
+    <Compile Include="Data\DataRepositoryBase.cs" />
+    <Compile Include="Data\DataRepositoryFactory.cs" />
+    <Compile Include="Data\DynamicExpressions.cs" />
+    <Compile Include="Exceptions\AuthorizationValidationException.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
+    <Compile Include="Extensions\CoreExtensions.cs" />
+    <Compile Include="Extensions\DataExtensions.cs" />
+    <Compile Include="Extensions\MefExtensions.cs" />
+    <Compile Include="PlaceHolder\MenuPlaceHolder.cs" />
+    <Compile Include="PlaceHolder\MenuRolePlaceHolder.cs" />
+    <Compile Include="PlaceHolder\RolePlaceHolder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceModel\CodeGenerator.cs" />
+    <Compile Include="ServiceModel\DataConnector.cs" />
+    <Compile Include="ServiceModel\DataContractBase.cs" />
+    <Compile Include="ServiceModel\ManagerBase.cs" />
+    <Compile Include="ServiceModel\PCIPAddress.cs" />
+    <Compile Include="ServiceModel\UserClientBase.cs" />
+    <Compile Include="Utils\EnumHelper.cs" />
+    <Compile Include="Utils\Helper.cs" />
+    <Compile Include="Utils\PropertySupport.cs" />
+    <Compile Include="Utils\SimpleMapper.cs" />
+    <Compile Include="Utils\XMLSerializationHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ade.jpg" />
+    <Content Include="Resources\avatar_male.jpg" />
+    <Content Include="Resources\blank.jpg" />
+    <Content Include="Resources\building.jpg" />
+    <Content Include="Resources\building2.jpg" />
+    <Content Include="Resources\daud.jpg" />
+    <Content Include="Resources\docImg.png" />
+    <Content Include="Resources\floor1.png" />
+    <Content Include="Resources\floor2.png" />
+    <Content Include="Resources\lag.jpg" />
+    <Content Include="Resources\lekan.jpg" />
+    <Content Include="Resources\mat.PNG" />
+    <Content Include="Resources\olu.jpg" />
+    <Content Include="Resources\phy.PNG" />
+    <Content Include="Resources\supo.jpg" />
+    <Content Include="Resources\tolu.jpg" />
+    <Content Include="Resources\tosin.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
