@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[cor_menu]
+(
+	[MenuId] BIGINT NOT NULL IDENTITY PRIMARY KEY, 
+	[Code] VARCHAR(10) NOT NULL , 
+    [Name] VARCHAR(100) NOT NULL, 
+    [Alias] VARCHAR(100) NOT NULL, 
+	[Action] VARCHAR(250) NOT NULL, 
+	[Controller] VARCHAR(250) NULL, 
+	[ModuleId] BIGINT NOT NULL,
+	[ParentId] BIGINT NULL,
+	[Description] VARCHAR(500) NULL, 
+	[ImageUrl] VARCHAR(250) NULL, 
+	[Image] IMAGE NULL, 
+    [Active] BIT NULL, 
+    [Deleted] BIT NULL, 
+    [CreatedBy] VARCHAR(50) NULL, 
+    [CreatedOn] DATETIME NULL, 
+    [UpdatedBy] VARCHAR(50) NULL, 
+    [UpdatedOn] DATETIME NULL, 
+    [RowVersion] TIMESTAMP NOT NULL, 
+    CONSTRAINT [AK_cor_menu_code] UNIQUE ([Code]), 
+    CONSTRAINT [AK_cor_menu_name] UNIQUE ([Name],[ModuleId]), 
+    FOREIGN KEY ([ModuleId]) REFERENCES [cor_module]([ModuleId]), 
+
+)

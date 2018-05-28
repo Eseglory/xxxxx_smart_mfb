@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[com_facebook_setup]
+(
+	[FacebookSetupId] BIGINT NOT NULL IDENTITY(1,1),
+	[Code] VARCHAR(10) NOT NULL PRIMARY KEY,
+	[ModuleCode] VARCHAR(10) NULL,
+	[AppID] VARCHAR(200) NOT NULL,
+	[AuthToken] VARCHAR(350) NOT NULL,
+	[AppSecret] VARCHAR(200) NOT NULL,
+	[Name] VARCHAR(200) NULL,
+	[SenderFacebook] VARCHAR(200) NOT NULL,
+	[UrlParameter] VARCHAR(200) NULL,
+	[Username] VARCHAR(200) NULL,
+	[Password] VARCHAR(200) NULL,
+    [Active] BIT NULL, 
+	[Default] BIT NULL, 
+	[Deleted] BIT NULL, 
+    [CreatedBy] VARCHAR(50) NULL, 
+    [CreatedOn] DATETIME NULL, 
+    [UpdatedBy] VARCHAR(50) NULL, 
+    [UpdatedOn] DATETIME NULL, 
+    [RowVersion] TIMESTAMP NOT NULL, 
+)

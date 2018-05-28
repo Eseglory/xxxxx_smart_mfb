@@ -1,0 +1,21 @@
+﻿CREATE TABLE [dbo].[cor_module]
+(
+	[ModuleId] BIGINT NOT NULL IDENTITY Primary Key, 
+	[Code] VARCHAR(10) NOT NULL , 
+    [Name] VARCHAR(100) NOT NULL, 
+    [Alias] VARCHAR(100) NOT NULL, 
+	[ModuleCategoryId] BIGINT NOT NULL,
+	[Description] VARCHAR(500) NULL, 
+	[Version] VARCHAR(100) NULL, 
+	[TestMode] BIT NULL, 
+    [Active] BIT NULL, 
+    [Deleted] BIT NULL, 
+    [CreatedBy] VARCHAR(50) NULL, 
+    [CreatedOn] DATETIME NULL, 
+    [UpdatedBy] VARCHAR(50) NULL, 
+    [UpdatedOn] DATETIME NULL, 
+    [RowVersion] TIMESTAMP NOT NULL, 
+    CONSTRAINT [AK_cor_module_code] UNIQUE ([Code]), 
+    CONSTRAINT [AK_cor_module_name] UNIQUE ([Name]), 
+    FOREIGN KEY ([ModuleCategoryId]) REFERENCES [cor_module_category]([ModuleCategoryId]), 
+)

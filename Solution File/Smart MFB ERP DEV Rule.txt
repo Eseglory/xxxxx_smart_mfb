@@ -1,0 +1,12 @@
+	SMART MFB ERP RULES
+
+1) Always take note of the warning message(there shouldn't be any warning message.
+2)Maintain a proper Naming convention.
+3)Try not to use shortcut try to make each component loosely coupled.
+4)Any component must start with a new project
+5)All project must be in its own repository.
+6)Entities/Tables Must state with the name of the component
+
+
+
+	THANKS GUYS. PLEASE LETS TRY AND FOLLOW THIS RULE.

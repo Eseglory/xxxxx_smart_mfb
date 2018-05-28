@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A5BAE5F4-B2A8-4FAD-A8DB-A90416CADB2F}</ProjectGuid>
+    <ProjectGuid>{5857CE9E-02B8-4267-821E-AE0E94B54AAC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Smart.MFB.ERP.Common.Core</RootNamespace>
-    <AssemblyName>Smart.MFB.ERP.Common.Core</AssemblyName>
+    <RootNamespace>Smart.MFB.ERP.Business.Core</RootNamespace>
+    <AssemblyName>Smart.MFB.ERP.Business.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,61 +28,40 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoreModuleDefinition.cs" />
-    <Compile Include="Entities\AddressType.cs" />
-    <Compile Include="Entities\AuditTrail.cs" />
-    <Compile Include="Entities\City.cs" />
-    <Compile Include="Entities\Country.cs" />
-    <Compile Include="Entities\Group.cs" />
-    <Compile Include="Entities\GroupRole.cs" />
-    <Compile Include="Entities\Language.cs" />
-    <Compile Include="Entities\Menu.cs" />
-    <Compile Include="Entities\MenuRole.cs" />
-    <Compile Include="Entities\Module.cs" />
-    <Compile Include="Entities\ModuleCategory.cs" />
-    <Compile Include="Entities\Religion.cs" />
-    <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\State.cs" />
-    <Compile Include="Entities\SucriberAccount.cs" />
-    <Compile Include="Entities\Theme.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\UserGroup.cs" />
-    <Compile Include="Enum\AuditAction.cs" />
-    <Compile Include="Enum\Enums.cs" />
+    <Compile Include="Managers\CoreManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportModuleDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Smart.MFB.ERP.Common\Smart.MFB.ERP.Common.csproj">
+    <ProjectReference Include="..\..\Common\Smart.MFB.ERP.Common.Core\Smart.MFB.ERP.Common.Core.csproj">
+      <Project>{a5bae5f4-b2a8-4fad-a8db-a90416cadb2f}</Project>
+      <Name>Smart.MFB.ERP.Common.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Smart.MFB.ERP.Common\Smart.MFB.ERP.Common.csproj">
       <Project>{a10fb47d-18a8-43c0-867e-39055c3f284e}</Project>
       <Name>Smart.MFB.ERP.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Smart.MFB.ERP.Data.Core.Contract\Smart.MFB.ERP.Data.Core.Contract.csproj">
+      <Project>{65ba5019-8ee4-40c4-ac28-2ec778b4b52a}</Project>
+      <Name>Smart.MFB.ERP.Data.Core.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Smart.MFB.ERP.Contract\Smart.MFB.ERP.Business.Contract.csproj">
+      <Project>{ddcb9e4c-5e1f-48ba-9138-d7ddd0e13704}</Project>
+      <Name>Smart.MFB.ERP.Business.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
