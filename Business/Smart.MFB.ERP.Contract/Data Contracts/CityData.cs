@@ -3,6 +3,7 @@ using Smart.MFB.ERP.Common.ServiceModel;
 
 namespace Smart.MFB.ERP.Business.Core.Contract
 {
+    //uit
     [DataContract]
     public class CityData : DataContractBase
     {
