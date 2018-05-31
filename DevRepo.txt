@@ -1,0 +1,25 @@
+
+Repository Steps
+1) Start With Database Layer
+2) Common Layer
+3) Data Layer
+4) Business Layer
+5) Client Layer
+6) Host Layer
+7) Presentation Layer
+8) Integration Layer
+
+
+1) The Common Layer is a mediator between the database and the data layer
+2) The Data layer is the data access layer. it were the CRUD operations are defined. here were are
+using repository pattern and entity framework.
+3) The Business Layer is the business logic layer
+4) The Client layer is a mediator between the business layer and the host
+5) The host is the service layer (WCF)
+6) the presentation layer feeds from the host layer
+the presentation tech: Web API and Angular JS.
+7) Integration is were you implement other external services / gateway (e.g payment gateway e.t.c)
+
+
+
+Define your interface first before implementing it. which is always in contract.

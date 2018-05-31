@@ -19,7 +19,7 @@ namespace Smart.MFB.ERP.Data.Core
         AuditManager _auditManager;
 
         public CoreContext()
-            : base("name=LagetronixSchoolDB")
+            : base("name=SmartMFBERPDB")
         {
             System.Data.Entity.Database.SetInitializer<CoreContext>(null);
 

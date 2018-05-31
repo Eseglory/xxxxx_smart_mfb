@@ -25,7 +25,7 @@ namespace Smart.MFB.ERP.Integration.AuditTrail
         const string SOLUTION_NAME = "CORE";
 
         public DataContext()
-            : base("name=LagetronixSchoolDB")
+            : base("name=SmartMFBERPDBAudit")
         {
             Database.SetInitializer<DataContext>(null);
         }
@@ -64,7 +64,7 @@ namespace Smart.MFB.ERP.Integration.AuditTrail
                 {
                     foreach (var audit in auditTrailList)
                     {
-                        //add all audits 
+                        //add all audits
                         AuditTrailSet.Add(audit);
                     }
 
@@ -122,7 +122,7 @@ namespace Smart.MFB.ERP.Integration.AuditTrail
 
             if (entry.State == EntityState.Added)
             {
-                //entry is Added 
+                //entry is Added
 
                 var model = (EntityBase)entry.Entity;
                 model.CreatedBy = "";
@@ -151,7 +151,7 @@ namespace Smart.MFB.ERP.Integration.AuditTrail
                 audit.Actions = AuditAction.U;
 
                 IEnumerable<string> modifiedProperties = entry.CurrentValues.PropertyNames;
-                //assing collection of mismatched Columns name as serialized string 
+                //assing collection of mismatched Columns name as serialized string
                 audit.ChangedColumns = XMLSerializationHelper.XmlSerialize(modifiedProperties.ToArray());
             }
 
@@ -177,17 +177,17 @@ namespace Smart.MFB.ERP.Integration.AuditTrail
                     object setterValue = null;
                     if (isOrginal)
                     {
-                        //Get orginal value 
+                        //Get orginal value
                         setterValue = entry.OriginalValues[propName];
                     }
                     else
                     {
-                        //Get orginal value 
+                        //Get orginal value
                         setterValue = entry.CurrentValues[propName];
                     }
-                    //Find property to update 
+                    //Find property to update
                     PropertyInfo propInfo = target.GetType().GetProperty(propName);
-                    //update property with orgibal value 
+                    //update property with orgibal value
                     if (setterValue == DBNull.Value)
                     {//
                         setterValue = null;

@@ -2,15 +2,14 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
-
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Smart.MFB.ERP.Contract")]
+[assembly: AssemblyTitle("Smart.MFB.ERP.Client.Core.Contract")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Smart.MFB.ERP.Contract")]
+[assembly: AssemblyProduct("Smart.MFB.ERP.Client.Core.Contract")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +20,7 @@ using System.Runtime.Serialization;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ddcb9e4c-5e1f-48ba-9138-d7ddd0e13704")]
+[assembly: Guid("81318297-3faf-4e78-a28d-6f18f6551397")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -37,4 +36,5 @@ using System.Runtime.Serialization;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: ContractNamespace("http://www.eglobalicthub.com",
-                              ClrNamespace = "Smart.MFB.ERP.Business.Core.Contract")]
+                              ClrNamespace = "Smart.MFB.ERP.Client.Core.Contract")]
+

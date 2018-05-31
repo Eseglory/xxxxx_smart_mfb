@@ -6,6 +6,7 @@
 4)Any component must start with a new project
 5)All project must be in its own repository.
 6)Entities/Tables Must state with the name of the component
+7) Don't reference project/service/library you don't need.
 
 
 
