@@ -69,8 +69,6 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Smart.MFB.Audit.DB", "Datab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.MFB.ERP.Test.Data.Core", "Test\Smart.MFB.ERP.Test.Data.Core\Smart.MFB.ERP.Test.Data.Core.csproj", "{1BC19689-46F6-4558-B4AB-0FFF42B32BBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.MFB.ERP.Hosts.ServicePortal_test", "Host\Smart.MFB.ERP.Hosts.ServicePortal_test\Smart.MFB.ERP.Hosts.ServicePortal_test.csproj", "{4BB885F0-F23B-49DC-9E87-868C61994507}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,10 +147,6 @@ Global
 		{1BC19689-46F6-4558-B4AB-0FFF42B32BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC19689-46F6-4558-B4AB-0FFF42B32BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC19689-46F6-4558-B4AB-0FFF42B32BBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4BB885F0-F23B-49DC-9E87-868C61994507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BB885F0-F23B-49DC-9E87-868C61994507}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BB885F0-F23B-49DC-9E87-868C61994507}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BB885F0-F23B-49DC-9E87-868C61994507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -179,6 +173,5 @@ Global
 		{FACD6DFA-30B7-4959-A234-DE212C5A808E} = {63F93C3F-3EEB-4774-8EB5-3DE14646D7B3}
 		{A8DEB730-89C8-423E-B5D7-ACA0B7B13633} = {2C51688E-AF35-4B8C-99A8-BC2C1497576B}
 		{1BC19689-46F6-4558-B4AB-0FFF42B32BBD} = {2D0901FA-4C02-41FF-9B16-D5746F4AE476}
-		{4BB885F0-F23B-49DC-9E87-868C61994507} = {3A5DAC8F-226E-4AF8-AFF9-FFFA36B75A98}
 	EndGlobalSection
 EndGlobal
