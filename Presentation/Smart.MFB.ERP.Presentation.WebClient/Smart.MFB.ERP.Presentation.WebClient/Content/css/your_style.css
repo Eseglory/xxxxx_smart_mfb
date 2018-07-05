@@ -1,0 +1,154 @@
+﻿/*
+ * It is advised not to edit the smartadmin_production.css
+ * as this will override any changes you make in the 
+ * later versions of this theme. 
+ * 
+ * We advise that you use use this CSS to override 
+ * SmartAdmin styles. 
+ * 
+ * Rename the stylesheet to whatever your liking so it will stay
+ * unique to you with each update of SmartAdmin.
+ */
+.padding-top-0 {
+  padding-top: 0 !important;
+}
+.padding-top-5 {
+  padding-top: 5px !important;
+}
+.padding-bottom-0 {
+  padding-bottom: 0 !important;
+}
+.padding-bottom-5 {
+  padding-bottom: 5px !important;
+}
+.padding-left-5 {
+  padding-left: 5px !important;
+}
+.padding-left-10 {
+  padding-left: 10px !important;
+}
+.padding-right-5 {
+  padding-right: 5px !important;
+}
+.padding-right-10 {
+  padding-right: 10px !important;
+}
+.margin-top-0 {
+  margin-top: 0 !important;
+}
+.margin-top-5 {
+  margin-top: 5px !important;
+}
+.margin-bottom-0 {
+  margin-bottom: 0 !important;
+}
+.margin-bottom-5 {
+  margin-bottom: 5px !important;
+}
+.margin-left-5 {
+  margin-left: 5px !important;
+}
+.margin-left-10 {
+  margin-left: 10px !important;
+}
+.margin-right-5 {
+  margin-right: 5px !important;
+}
+.margin-right-10 {
+  margin-right: 10px !important;
+}
+.margin-right-15 {
+  margin-right: 15px !important;
+}
+/*.smart-form {
+    .input {
+        input {
+            padding: 4px 10px !important;
+        }
+    }
+}*/
+/* SmartForm Bootstrap Validation */
+#extr-page h4.paragraph-header {
+  width: auto;
+}
+#extr-page .smart-form .alert {
+  margin: 4px;
+}
+#extr-page .smart-form .alert li {
+  margin-left: 14px;
+  list-style: none;
+}
+#extr-page .smart-form .alert li:before {
+  content: "\f071";
+  font-family: FontAwesome;
+  position: absolute;
+  left: 14px;
+}
+#extr-page .smart-form div + fieldset {
+  padding-top: 15px;
+}
+
+/*Datatable content size*/
+.table-condensed.table>tbody>tr>td, .table-condensed.table>tbody>tr>th, .table-condensed.table>tfoot>tr>td, .table-condensed.table>tfoot>tr>th, .table-condensed.table>thead>tr>td, .table-condensed.table>thead>tr>th {
+    
+    font-size: smaller;
+}
+/*Body font size*/
+body {
+    font-size: 11px;
+    
+}
+.smart-style-2 #ribbon .breadcrumb, .smart-style-2 #ribbon .breadcrumb a, .smart-style-2 #ribbon .breadcrumb li:last-child, .smart-style-2 #ribbon .breadcrumb>.active {
+    color: #00dc00!important;
+}
+.table-condensed.table>tbody>tr>td {
+    line-height: 0!important;
+    vertical-align:middle; 
+    padding: 0px 0px 0px 0px;      
+}
+.table-condensed.table>thead>tr>td, .table-condensed.table>thead>tr>th {
+    color: #00dc00;
+}
+.smart-style-2 #header, .smart-style-2 .page-footer, .smart-style-2 .superbox-show {
+    background-color: #9C9F84;
+}
+
+.jarviswidget-color-darken>header,.jarviswidget-color-blue>header {
+    border-color: #9C9F84!important;
+    background: #00dc00;
+    color: #fff;
+}
+
+
+/*menu hover*/
+.smart-style-2 nav ul li a:hover, .smart-style-2 nav ul ul li>a:hover {
+    color: #00dc00!important;
+    background: none!important;
+}
+
+/*menu link*/
+.smart-style-2 nav ul li a {
+    color: #000!important;
+    font-size: 10px!important;
+}
+/*menu open*/
+.smart-style-2 nav ul li.parent_menu.open>a {
+    color: #fff!important;
+    font-weight: 700;
+    background: #00ba00!important;
+    line-height:0!important;
+    padding: 5px 5px 5px 5px;
+    
+}
+
+
+/*menu open*/
+.smart-style-2 nav ul li ul li .active>a, .smart-style-2 nav ul li ul li.open>a {
+    color: #000000!important;
+    font-weight: 700;
+    font-size:12px!important;
+}
+
+.parent_menu i {
+    color: #034a0b!important;
+}

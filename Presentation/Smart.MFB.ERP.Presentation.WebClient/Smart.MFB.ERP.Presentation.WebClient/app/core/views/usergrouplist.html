@@ -1,0 +1,290 @@
+﻿<div ng-switch="viewMode">
+    <div ng-switch-when="usergroupedit">
+        
+        <!-- MAIN CONTENT -->
+        <div id="content">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                    <!--<h1 class="page-title txt-color-blueDark">
+                        <i class="fa fa-table fa-fw "></i>
+                        Settings
+                        <span>
+                            >
+                            All Modules
+                        </span>
+                    </h1>-->
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+
+                </div>
+            </div>
+
+            <!-- widget grid -->
+            <section id="widget-grid" class="" >
+
+                <!-- row -->
+                <div class="row">
+
+                    <!-- NEW WIDGET START -->
+                    <article class="col-sm-12 col-md-12 col-lg-6">
+                       
+                        <!-- Widget ID (each widget will need unique ID)-->
+                        <div class="jarviswidget jarviswidget-color-blue" id="wid-id-1" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                            <!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+
+                        -->
+                            <header>
+                                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                <h2>{{title}} </h2>
+
+                                <div class="widget-toolbar">
+                                    <button class="btn btn-info btn-sm" data-ng-click="loadUserGroups()">Refresh <i class="glyphicon glyphicon-refresh"></i></button>
+                                    
+                                </div>
+
+                            </header>
+
+                            <!-- widget div-->
+                            <div>
+
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+                               
+                                </div>
+                                <!-- end widget edit box -->
+                                <!-- widget content -->
+
+                                
+                                <div class="widget-body no-padding">
+                                    <!--<div class="text-left">
+                                        <button class="btn btn-success" ng-click="createUserGroup()">
+                                            <i class="fa fa-plus"></i> <span class="hidden-mobile">Create</span>
+                                        </button>
+                                      
+                                    </div>-->
+
+                                    <form class="form-horizontal">
+                                        <br/>
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Users</label>
+                                                <div class="col-md-5">
+                                                    <select class="form-control" ng-model="userGroupModel.UserId" ng-options="user.UserId as user.LoginID for user in users" style="width:350px;background-color:#f8e1e1">
+                                                        <option value="0">None</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Group</label>
+                                                <div class="col-md-5">
+                                                    <select class="form-control select2" ng-model="userGroupModel.GroupId" ng-options="group.GroupId as group.Name for group in groups" style="width:350px;background-color:#f8e1e1">
+                                                        <option value="0">None</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label"></label>
+                                                <div class="col-md-5">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" ng-model="userGroupModel.Active">
+                                                            Active
+                                                        </label>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+
+
+                                        </fieldset>
+
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <button class="btn btn-default" type="button" ng-click="cancel()">
+                                                        Discard
+                                                    </button>
+                                                    <button class="btn btn-primary" type="button" ng-click="save()">
+                                                        <i class="fa fa-save"></i>
+                                                        Save
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                   
+                                </div>
+                                <!-- end widget content -->
+
+                            </div>
+                            <!-- end widget div -->
+
+                        </div>
+                        <!-- end widget -->
+
+
+                    </article>
+                    <!-- WIDGET END -->
+
+                </div>
+
+                <!-- end row -->
+                <!-- end row -->
+
+            </section>
+            <!-- end widget grid -->
+
+            <div ng-show="init && usergroupmodel !== 0">
+                <!-- widget grid -->
+                <section id="wdtUserGroupRole" class="">
+
+                    <!-- row -->
+                    <div class="row">
+
+                        <!-- NEW WIDGET START -->
+                        <article class="col-sm-12 col-md-12 col-lg-6">
+
+                            <!-- Widget ID (each widget will need unique ID)-->
+                            <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                                <!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+
+                        -->
+                                <header>
+                                    <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                    <h2>User Group</h2>
+
+                                    <div class="widget-toolbar">
+                                        <!--<button class="btn btn-info btn-sm" data-ng-click="loadUserGroupRoles()">Refresh <i class="glyphicon glyphicon-refresh"></i></button>-->
+
+                                    </div>
+
+                                </header>
+
+                                <!-- widget div-->
+                                <div>
+
+                                    <!-- widget edit box -->
+                                    <div class="jarviswidget-editbox">
+                                        <!-- This area used as dropdown edit box -->
+
+                                    </div>
+                                    <!-- end widget edit box -->
+                                    <!-- widget content -->
+
+
+                                    <div class="widget-body no-padding">
+                                        <!--<div class="text-left">
+                                    <button class="btn btn-success" ng-click="createUserGroup()">
+                                        <i class="fa fa-plus"></i> <span class="hidden-mobile">Create</span>
+                                    </button>
+
+                                </div>-->
+
+                                        <div class="widget-body-toolbar">
+
+                                           
+                                        </div>
+
+                                        <div ng-show="init && usergroupmodel.length > 0">
+
+                                            <div ng-show="viewModelHelper.modelIsValid == false" class="alert alert-danger">
+                                                <h4 class="alert-heading">Errors!</h4>
+                                                <ul data-ng-repeat="e in viewModelHelper.modelErrors">
+                                                    <li>{{ e }}</li>
+                                                </ul>
+                                            </div>
+
+                                            <table id="userGroupTable" class="table table-hover table-striped table-bordered table-advanced tablesorter display table-condensed" width="100%">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th class="hasinput" style="width:200px">
+                                                            <input type="text" class="form-control" placeholder="Filter Role" />
+                                                        </th>
+                                                        <th class="hasinput" style="width:200px">
+                                                            <input type="text" class="form-control" placeholder="Filter Module" />
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th width="300px">User</th>
+                                                        <th width="300px">Group</th>
+                                                        <th width="20%">Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr ng-repeat="userGroup in usergroupmodel">
+                                                        <td>{{userGroup.UserName}}</td>
+                                                        <td>{{userGroup.GroupName}}</td>                                                      
+                                                        <td>
+                                                            
+                                                            <button type="button" class="btn btn-danger btn-xs" ng-click="deleteUserGroup(userGroup.UserGroupId)">
+                                                                <i class="glyphicon glyphicon-trash"></i>
+                                                                Delete
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+
+                                        <h4 class="alert alert-info" ng-show="init && usergroupRoleModels.length == 0">
+                                            Click create to create a usergroup role.The usergroup role is use to map usergroup to different operation roles.
+                                        </h4>
+
+                                    </div>
+                                    <!-- end widget content -->
+
+                                </div>
+                                <!-- end widget div -->
+
+                            </div>
+                            <!-- end widget -->
+                        </article>
+                        <!-- WIDGET END -->
+
+                    </div>
+
+                    <!-- end row -->
+                    <!-- end row -->
+
+                </section>
+                <!-- end widget grid -->
+            </div>
+
+            </div>
+        <!-- END MAIN CONTENT -->
+        <div>
+         
+        </div>
+    </div>
+    <div ng-switch-when="success">
+        
+    </div>
+</div>

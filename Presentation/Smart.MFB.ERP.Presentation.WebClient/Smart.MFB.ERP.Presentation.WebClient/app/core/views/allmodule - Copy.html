@@ -1,0 +1,157 @@
+﻿<div ng-switch="viewMode">
+    <div ng-switch-when="modulelist">
+        
+        <!-- MAIN CONTENT -->
+        <div id="content">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                    <!--<h1 class="page-title txt-color-blueDark">
+                        <i class="fa fa-table fa-fw "></i>
+                        Settings
+                        <span>
+                            >
+                            All Modules
+                        </span>
+                    </h1>-->
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+
+                </div>
+            </div>
+
+            <!-- widget grid -->
+            <section id="widget-grid" class="">
+
+                <!-- row -->
+                <div class="row">
+
+                    <!-- NEW WIDGET START -->
+                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+
+                        <!-- Widget ID (each widget will need unique ID)-->
+                        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                            <!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+
+                        -->
+                            <header>
+                                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                <h2>Modules </h2>
+
+                                <div class="widget-toolbar">
+                                    <button class="btn btn-info btn-sm" data-ng-click="availableModules()">Refresh <i class="glyphicon glyphicon-refresh"></i></button>
+                                    
+                                </div>
+
+                            </header>
+
+                            <!-- widget div-->
+                            <div>
+
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+
+                                </div>
+                                <!-- end widget edit box -->
+                                <!-- widget content -->
+                                <div class="widget-body no-padding">
+
+                                    <table id="moduleTable" class="table table-hover table-striped table-bordered table-advanced tablesorter display table-condensed" width="100%">
+                                        
+                                        <thead>
+                                            <tr>
+                                                <th class="hasinput">
+                                                    
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" placeholder="Filter Name" />
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" placeholder="Filter Category" />
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" placeholder="Filter Version" />
+                                                </th>
+                                                <th class="hasinput">
+                                                    <input type="text" class="form-control" placeholder="Filter State" />
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Name</th>
+                                                <th>Category</th>
+                                                <th>Version</th>
+                                                <th>State</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr ng-repeat="module in modules">
+                                                <td>{{$index + 1}}</td>
+                                                <td>{{module.Alias}}</td>
+                                                <td>{{module.ModuleCategoryAlias}}</td>
+                                                <td>{{module.Version}}</td>
+                                                <td>{{moduleStatus(module.Active)}}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-success btn-xs" ng-click="activateModule(module.ModuleId)" ng-show="module.Active == false">
+                                                        <i class="glyphicon glyphicon-check"></i>
+                                                        Activate
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-xs" ng-click="deactivateModule(module.ModuleId)" ng-show="module.Active == true">
+                                                        <i class="glyphicon glyphicon-eject"></i>
+                                                        De-Activate
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+                                <!-- end widget content -->
+
+                            </div>
+                            <!-- end widget div -->
+
+                        </div>
+                        <!-- end widget -->
+
+
+                    </article>
+                    <!-- WIDGET END -->
+
+                </div>
+
+                <!-- end row -->
+                <!-- end row -->
+
+            </section>
+            <!-- end widget grid -->
+
+        </div>
+        <!-- END MAIN CONTENT -->
+
+        
+        <div ng-show="init && modules.length == 0">
+            <h2>There are no available modules.</h2>
+        </div>
+        <div>
+         
+        </div>
+    </div>
+    <div ng-switch-when="success">
+        
+    </div>
+</div>

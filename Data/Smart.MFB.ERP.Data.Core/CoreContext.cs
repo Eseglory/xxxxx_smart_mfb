@@ -41,11 +41,7 @@ namespace Smart.MFB.ERP.Data.Core
         public DbSet<Language> LanguageSet { get; set; }
         public DbSet<Theme> ThemeSet { get; set; }
         public DbSet<Religion> ReligionSet { get; set; }
-
-
-
         public DbSet<Smart.MFB.ERP.Common.Core.Entities.AuditTrail> AuditTrail { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

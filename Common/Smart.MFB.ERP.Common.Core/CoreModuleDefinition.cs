@@ -72,7 +72,6 @@ namespace Smart.MFB.ERP.Common.Core
 
             #region Administrator Menu
             items.Add(new MenuRolePlaceHolder() { MenuName = "SETUP_COR", RoleName = GROUP_ADMINISTRATOR });
-            items.Add(new MenuRolePlaceHolder() { MenuName = "PARAM_COR", RoleName = GROUP_ADMINISTRATOR });
             items.Add(new MenuRolePlaceHolder() { MenuName = "MODULE_COR", RoleName = GROUP_ADMINISTRATOR });
             items.Add(new MenuRolePlaceHolder() { MenuName = "COUNTRY_COR", RoleName = GROUP_ADMINISTRATOR });
             items.Add(new MenuRolePlaceHolder() { MenuName = "LANGUAGE_COR", RoleName = GROUP_ADMINISTRATOR });
@@ -81,7 +80,6 @@ namespace Smart.MFB.ERP.Common.Core
             items.Add(new MenuRolePlaceHolder() { MenuName = "GROUP_COR", RoleName = GROUP_ADMINISTRATOR });
             items.Add(new MenuRolePlaceHolder() { MenuName = "USER_COR", RoleName = GROUP_ADMINISTRATOR });
             items.Add(new MenuRolePlaceHolder() { MenuName = "ROLE_COR", RoleName = GROUP_ADMINISTRATOR });
-            //items.Add(new MenuRolePlaceHolder() { MenuName = "MENU_COR", RoleName = GROUP_ADMINISTRATOR });
             items.Add(new MenuRolePlaceHolder() { MenuName = "THEME_COR", RoleName = GROUP_ADMINISTRATOR });
 
             //Communication

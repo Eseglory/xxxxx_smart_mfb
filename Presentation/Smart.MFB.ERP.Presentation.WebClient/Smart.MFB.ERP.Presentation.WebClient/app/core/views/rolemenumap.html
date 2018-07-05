@@ -1,0 +1,160 @@
+﻿<div ng-switch="viewMode">
+    <div ng-switch-when="rolemenumap">
+        
+        <!-- MAIN CONTENT -->
+        <div id="content">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                    <!--<h1 class="page-title txt-color-blueDark">
+                        <i class="fa fa-table fa-fw "></i>
+                        Settings
+                        <span>
+                            >
+                            All Roles
+                        </span>
+                    </h1>-->
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+
+                </div>
+            </div>
+
+            <!-- widget grid -->
+            <section id="widget-grid" class="">
+
+                <!-- row -->
+                <div class="row">
+
+                    <!-- NEW WIDGET START -->
+                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+
+                        <!-- Widget ID (each widget will need unique ID)-->
+                        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                            <!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+
+                        -->
+                            <header>
+                                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                <h2>Roles </h2>
+
+                                <div class="widget-toolbar">
+                                    <button class="btn btn-info btn-sm" data-ng-click="availableRoles()">Refresh <i class="glyphicon glyphicon-refresh"></i></button>
+                                    
+                                </div>
+
+                            </header>
+
+                            <!-- widget div-->
+                            <div>
+
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+
+                                </div>
+                                <!-- end widget edit box -->
+                                <div class="widget-body-toolbar">
+
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-sm" ng-click="createRole()">
+                                            Create
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ng-click="importRole()">
+                                            Import
+                                        </button>
+                                    </div>
+
+                                    <div class="btn-group">
+                                        <select class="form-control input pull-left" ng-model="selectedModule" ng-options="module.Code as module.Name for module in modules" style="width:250px;" ng-change="onModuleChanged(selectedModule)"></select>
+                                        
+                                        <button type="button" class="btn btn-info" ng-click="loadMenus(selectedModule)">
+                                            Load
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- widget content -->
+                                <div class="widget-body no-padding">
+
+                                    <table id="roleTable" class="table table-hover table-striped table-bordered table-advanced tablesorter display table-condensed" width="100%">
+                                        
+                                        <thead>
+                                            <tr>
+                                                <th class="hasinput" style="width:17%">
+                                                    <input type="text" class="form-control" placeholder="Filter Role" />
+                                                </th>
+                                              
+                                                <th class="hasinput" style="width:16%">
+                                                    <input type="text" class="form-control" placeholder="Filter Module" />
+                                                </th>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <th width="250px">Menu</th>
+                                                
+                                                <th width="250px">Description</th>
+                                                
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr ng-repeat="menu in menus">
+                                                <td>{{menu.Name}}</td>                 
+                                                <td>{{menu.Description}}</td>
+                                              
+                                                
+                                            </tr>
+
+                                        </tbody>
+                                        
+                                    </table>
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="deleteRole(role.RoleId)">
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                        ADD
+                                    </button>
+                                </div>
+                                <!-- end widget content -->
+
+                            </div>
+                            <!-- end widget div -->
+
+                        </div>
+                        <!-- end widget -->
+
+
+                    </article>
+                    <!-- WIDGET END -->
+
+                </div>
+
+                <!-- end row -->
+                <!-- end row -->
+
+            </section>
+            <!-- end widget grid -->
+
+        </div>
+        <!-- END MAIN CONTENT -->
+
+        
+        <div ng-show="init && roles.length == 0">
+            <h2>There are no available roles.</h2>
+        </div>
+        <div>
+         
+        </div>
+    </div>
+    <div ng-switch-when="success">
+        
+    </div>
+</div>

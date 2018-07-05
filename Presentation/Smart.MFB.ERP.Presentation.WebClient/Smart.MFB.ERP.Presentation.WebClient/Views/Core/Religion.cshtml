@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.PageId = "Religions";
+}
+
+@section pagespecific
+{
+  <script src="@Url.Content("~/app/core/controllers/ReligionViewModel.js")" type="text/javascript"></script>
+}
+@section footerScript
+{
+    angular.bootstrap(document.getElementById("religion"),['religion']);
+}
+
+<div data-ng-app="religion" id="religion">
+    @*@Html.Partial("~/Views/Shared/_ValidationErrors.cshtml")*@
+    <div ng-view></div>
+</div>
+
+

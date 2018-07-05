@@ -1,0 +1,140 @@
+﻿@using Smart.MFB.ERP.Presentation.WebClient.Models;
+
+<!-- Left panel : Navigation area -->
+<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+<aside id="left-panel">
+
+    <!-- User info -->
+    @{ Html.RenderPartial("_CurrentUser"); }
+    <!-- end user info -->
+    <!-- NAVIGATION : This navigation is also responsive
+
+    To make this navigation dynamic please make sure to link the node
+    (the reference to the nav > ul) after page load. Or the navigation
+    will not initialize.
+    -->
+    <nav>
+        <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+        Please note that these links work a bit different than
+        traditional href="" links. See documentation for details.
+        -->
+        @if (ViewBag.Menus != null)
+        {
+            <ul>
+                @foreach (var menu in ViewBag.Menus)
+                {
+
+                    var route = (MenuModel)menu;
+                    var icon = "sf-icon-fw icon";
+                    <li class="@Html.RouteIf(route.Action, "active")  parent_menu">
+                        @if (@menu.ImageUrl != "")
+                        {
+                            icon += " " + @menu.ImageUrl;
+                        }
+
+                        <a href="#" title="@menu.Alias"><i class="@icon"></i> <span>@menu.Alias</span></a>
+                        
+                        @if (menu.Children != null)
+                        {
+                            <ul>
+                                @foreach (var item in menu.Children)
+                                {
+                                    route = (MenuModel)item;
+                                    icon = "sf-icon-fw icon";
+
+                                    if (item.Children.Count <= 0)
+                                    {
+                                        <li class="@Html.RouteIf(route.Action, "active") ">
+                                                        @if (@item.ImageUrl != "")
+                                                        {
+                                                            icon += " " + @item.ImageUrl;
+                                                        }                              
+                                            <a href="@Url.Action(@item.Action, @item.Controller)" title="@item.Alias"><i class="@icon"></i><span>@item.Alias</span></a>
+                                        </li>
+
+                                    }
+                                    else
+                                    {
+                                        <li class="@Html.RouteIf(route.Action, "active")">
+                                            @if (@item.ImageUrl != "")
+                                            {
+                                                icon += " " + @item.ImageUrl;
+                                            }
+                                           
+                                            <a href="#" title="@item.Alias"><i class="@icon"></i> <span>@item.Alias</span></a>
+                                            
+                                            @if (item.Children != null)
+                                            {
+                                                <ul>
+                                                    @foreach (var subMenu in item.Children)
+                                                    {
+                                                        route = (MenuModel)subMenu;
+                                                        icon = "sf-icon-fw icon";
+
+                                                        if (subMenu.Children.Count <= 0)
+                                                        {
+                                                            <li class="@Html.RouteIf(route.Action, "active")" style="margin-left:10px">
+                                                               @if (@item.ImageUrl != "")
+                                                               {
+                                                                   icon += " " + @item.ImageUrl;
+                                                               }
+                                                                <a href="@Url.Action(@subMenu.Action, @subMenu.Controller)" title="@subMenu.Alias"><i  class=""></i><span>@subMenu.Alias</span></a>
+                                                            </li>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <li class="@Html.RouteIf(route.Action, "active")">
+                                                                @if (@item.ImageUrl != "")
+                                                                {
+                                                                    icon += " " + @item.ImageUrl;
+                                                                }
+                                                                <a href="#" title="@subMenu.Alias"><i class="@icon"></i> <span>@subMenu.Alias</span></a>
+
+                                                                @if (subMenu.Children != null)
+                                                                {
+                                                                    <ul>
+                                                                        @foreach (var subsubMenu in subMenu.Children)
+                                                                        {
+                                                                            route = (MenuModel)subsubMenu;
+                                                                            icon = "sf-icon-fw icon";
+                                                                            <li class="@Html.RouteIf(route.Action, "active")">
+                                                                                @if (@subMenu.ImageUrl != "")
+                                                                                {
+                                                                                    icon += " " + @subMenu.ImageUrl;
+                                                                                }
+                                                                                
+                                                                                <a href="@Url.Action(@subsubMenu.Action, @subsubMenu.Controller)" title="@subsubMenu.Alias"><i class="@icon"></i><span>@subsubMenu.Alias</span></a>
+                                                                            </li>
+                                                                        }
+                                                                    </ul>
+                                                                }
+                                                            </li>
+
+                                                        }
+                                                    }
+                                                </ul>
+                                            }
+                                        </li>
+
+                                    }
+
+                                }
+
+
+                            </ul>
+                        }
+
+                    </li>
+                }
+
+            </ul>
+        }
+
+    </nav>
+    <span class="minifyme" data-action="minifyMenu">
+        <i class="fa fa-arrow-circle-left hit"></i>
+    </span>
+
+</aside>
+<!-- END NAVIGATION -->

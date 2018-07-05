@@ -34,7 +34,7 @@ namespace Smart.MFB.ERP.Common.ServiceModel
         [OperationBehavior(TransactionScopeRequired = true)]
         public virtual void RegisterModule()
         {
-            
+
         }
 
         [OperationBehavior(TransactionScopeRequired = true)]
@@ -64,7 +64,7 @@ namespace Smart.MFB.ERP.Common.ServiceModel
                 throw new FaultException<AuthorizationValidationException>(ex, ex.Message);
             }
         }
-        
+
         protected T ExecuteFaultHandledOperation<T>(Func<T> codetoExecute)
         {
             try

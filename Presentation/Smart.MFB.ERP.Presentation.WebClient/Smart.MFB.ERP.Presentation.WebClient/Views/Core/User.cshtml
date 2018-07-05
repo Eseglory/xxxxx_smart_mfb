@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.PageId = "Users";
+}
+
+@section pagespecific
+{
+  <script src="@Url.Content("~/app/core/controllers/UserViewModel.js")" type="text/javascript"></script>
+}
+@section footerScript
+{
+    angular.bootstrap(document.getElementById("user"),['user']);
+}
+
+<div data-ng-app="user" id="user">
+    @*@Html.Partial("~/Views/Shared/_ValidationErrors.cshtml")*@
+    <div ng-view></div>
+</div>
+
+

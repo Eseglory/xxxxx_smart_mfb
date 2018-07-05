@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.PageId = "ERP Selection";
+}
+
+@section pagespecific
+{
+  <script src="@Url.Content("~/app/financial/controllers/ERPSelectionViewModel.js")" type="text/javascript"></script>
+}
+@section footerScript
+{
+    angular.bootstrap(document.getElementById("eRPSelection"),['eRPSelection']);
+}
+
+<div data-ng-app="eRPSelection" id="eRPSelection">
+    @*@Html.Partial("~/Views/Shared/_ValidationErrors.cshtml")*@
+    <div ng-view></div>
+</div>
+
+

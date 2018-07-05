@@ -67,7 +67,7 @@ namespace Smart.MFB.ERP.Data.Core
                 _context.GroupSet.Add(
                     new Group()
                     {
-                        Name = "Faculty",
+                        Name = "Managers",
                         Active = true,
                         Deleted = false,
                         CreatedBy = "Auto",
@@ -79,7 +79,7 @@ namespace Smart.MFB.ERP.Data.Core
                 _context.GroupSet.Add(
                     new Group()
                     {
-                        Name = "Student",
+                        Name = "Accountant",
                         Active = true,
                         Deleted = false,
                         CreatedBy = "Auto",
@@ -91,7 +91,7 @@ namespace Smart.MFB.ERP.Data.Core
                 _context.GroupSet.Add(
                    new Group()
                    {
-                       Name = "Parent",
+                       Name = "Customers",
                        Active = true,
                        Deleted = false,
                        CreatedBy = "Auto",
@@ -225,7 +225,6 @@ namespace Smart.MFB.ERP.Data.Core
                 _context.SaveChanges();
             }
         }
-
         void BuildCountryData()
         {
             if (!_context.CountrySet.Any())
@@ -3812,7 +3811,6 @@ namespace Smart.MFB.ERP.Data.Core
                 _context.SaveChanges();
             }
         }
-
         void BuildStateData()
         {
             if (!_context.StateSet.Any())
@@ -5013,13 +5011,11 @@ namespace Smart.MFB.ERP.Data.Core
                                          UpdatedOn = DateTime.Now
                                      }
                                      );
-                
+
                 _context.SaveChanges();
         }
     }
-
-
-    void BuildCityData()
+        void BuildCityData()
         {
             if (!_context.CitySet.Any())
             {
@@ -5074,7 +5070,6 @@ namespace Smart.MFB.ERP.Data.Core
                 _context.SaveChanges();
             }
         }
-
         void BuildLanguageData()
         {
             if (!_context.LanguageSet.Any())
@@ -6061,7 +6056,6 @@ namespace Smart.MFB.ERP.Data.Core
                 _context.SaveChanges();
             }
         }
-
         void BuildReligionData()
         {
             if (!_context.ReligionSet.Any())

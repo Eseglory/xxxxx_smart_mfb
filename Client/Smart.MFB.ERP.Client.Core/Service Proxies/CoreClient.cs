@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Smart.MFB.ERP.Client.Core.Contract;
 using Smart.MFB.ERP.Common.ServiceModel;
 using Smart.MFB.ERP.Client.Core.Entities;
+using System;
 
 namespace Smart.MFB.ERP.Client.Core
 {
@@ -157,37 +158,30 @@ namespace Smart.MFB.ERP.Client.Core
         #endregion
 
         #region Menu
-
         public Menu UpdateMenu(Menu menu)
         {
             return Channel.UpdateMenu(menu);
         }
-
         public void DeleteMenu(long menuId)
         {
             Channel.DeleteMenu(menuId);
         }
-
         public Menu GetMenu(long menuId)
         {
             return Channel.GetMenu(menuId);
         }
-
         public Menu[] GetAllMenus()
         {
             return Channel.GetAllMenus();
         }
-
         public Menu[] GetMenuByLogin(string LoginUser)
         {
             return Channel.GetMenuByLogin(LoginUser);
         }
-
         public MenuData[] GetModuleMenus(long moduleId)
         {
             return Channel.GetModuleMenus(moduleId);
         }
-
         #endregion
 
         #region MenuRole

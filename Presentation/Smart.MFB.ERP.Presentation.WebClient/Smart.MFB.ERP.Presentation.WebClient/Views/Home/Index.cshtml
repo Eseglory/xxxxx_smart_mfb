@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.PageId = "Profile";
+
+}
+
+@section pagespecific
+{
+    <script src="@Url.Content("~/app/core/controllers/ProfileViewModel.js")" type="text/javascript"></script>
+}
+@section footerScript
+{
+    angular.bootstrap(document.getElementById("profile"),['profile']);
+}
+
+<div data-ng-app="profile" id="profile">
+    @*@Html.Partial("~/Views/Shared/_ValidationErrors.cshtml")*@
+    <div ng-view></div>
+</div>
+
+

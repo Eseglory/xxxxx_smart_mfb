@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.PageId = "Current Theme";
+}
+
+@section pagespecific
+{
+  <script src="@Url.Content("~/app/core/controllers/ThemeViewModel.js")" type="text/javascript"></script>
+}
+@section footerScript
+{
+    angular.bootstrap(document.getElementById("theme"),['theme']);
+}
+
+<div data-ng-app="theme" id="theme">
+    @*@Html.Partial("~/Views/Shared/_ValidationErrors.cshtml")*@
+    <div ng-view></div>
+</div>
+
+

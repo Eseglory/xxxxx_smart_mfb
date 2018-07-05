@@ -25,7 +25,7 @@ namespace Smart.MFB.ERP.Integration.AuditTrail
         const string SOLUTION_NAME = "CORE";
 
         public DataContext()
-            : base("name=SmartMFBERPDBAudit")
+            : base("name=SmartMFBERPDB")
         {
             Database.SetInitializer<DataContext>(null);
         }

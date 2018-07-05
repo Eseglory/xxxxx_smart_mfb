@@ -1,0 +1,155 @@
+﻿<div ng-switch="viewMode">
+    <div ng-switch-when="themelist">
+        
+        <!-- MAIN CONTENT -->
+        <div id="content">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                    <!--<h1 class="page-title txt-color-blueDark">
+                        <i class="fa fa-table fa-fw "></i>
+                        Settings
+                        <span>
+                            >
+                            All Modules
+                        </span>
+                    </h1>-->
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+
+                </div>
+            </div>
+
+            <!-- widget grid -->
+            <section id="widget-grid" class="" >
+
+                <!-- row -->
+                <div class="row">
+
+                    <!-- NEW WIDGET START -->
+                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+                       
+                        <!-- Widget ID (each widget will need unique ID)-->
+                        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                            <!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+
+                        -->
+                            <header>
+                                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                <h2>{{title}} </h2>
+
+                                <div class="widget-toolbar">
+                                    <button class="btn btn-info btn-sm" data-ng-click="loadThemes()">Refresh <i class="glyphicon glyphicon-refresh"></i></button>
+                                    
+                                </div>
+
+                            </header>
+
+                            <!-- widget div-->
+                            <div>
+
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+                               
+                                </div>
+                                <!-- end widget edit box -->
+                                <!-- widget content -->
+
+                                
+                                <div class="widget-body no-padding">
+                                    <!--<div class="text-left">
+                                        <button class="btn btn-success" ng-click="createGroup()">
+                                            <i class="fa fa-plus"></i> <span class="hidden-mobile">Create</span>
+                                        </button>
+                                      
+                                    </div>-->
+
+                                    <div class="widget-body-toolbar">
+
+                                        <div class="btn-group">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div ng-show="init && themes.length > 0">
+                                        <table id="themeTable" class="table table-hover table-striped table-bordered table-advanced tablesorter display table-condensed" width="100%" ">
+
+                                            <thead>
+                                                <tr>
+                                                    <th class="hasinput" style="width:17%">
+                                                        <input type="text" class="form-control" placeholder="Filter COde" />
+                                                    </th>
+                                                    <th class="hasinput" style="width:50px">
+                                                        <input type="text" class="form-control" placeholder="Filter Name" />
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th width="150px">Theme</th>
+                                                    <th width="150px">Status</th>
+                                                    <th width="120px">Action</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr ng-repeat="theme in themes">
+                                                    <td>{{themeChangedStatus(theme.Code)}}</td>
+                                                    <td>{{themeStatus(theme.Active)}}</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success btn-xs" ng-click="viewTheme(theme.ThemeId)">
+                                                            <i class="glyphicon glyphicon-edit"></i>
+                                                            Change Theme
+                                                        </button>
+                                                       
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                    
+                                    <h4 class="alert alert-info" ng-show="init && themes.length == 0">
+                                        Click create to create a theme.The theme is use to manage countries.
+                                    </h4>
+                                   
+                                </div>
+                                <!-- end widget content -->
+
+                            </div>
+                            <!-- end widget div -->
+
+                        </div>
+                        <!-- end widget -->
+
+
+                    </article>
+                    <!-- WIDGET END -->
+
+                </div>
+
+                <!-- end row -->
+                <!-- end row -->
+
+            </section>
+            <!-- end widget grid -->
+
+        </div>
+        <!-- END MAIN CONTENT -->
+        <div>
+         
+        </div>
+    </div>
+    <div ng-switch-when="success">
+        
+    </div>
+</div>

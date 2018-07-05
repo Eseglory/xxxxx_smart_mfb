@@ -1,0 +1,263 @@
+﻿<div ng-switch="viewMode">
+    <div ng-switch-when="moduleedit">
+        
+        <!-- MAIN CONTENT -->
+        <div id="content">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                    <!--<h1 class="page-title txt-color-blueDark">
+                        <i class="fa fa-table fa-fw "></i>
+                        Settings
+                        <span>
+                            >
+                            All Modules
+                        </span>
+                    </h1>-->
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+
+                </div>
+            </div>
+
+            <!-- widget grid -->
+            <section id="widget-grid" class="" >
+
+                <!-- row -->
+                <div class="row">
+
+                    <!-- NEW WIDGET START -->
+                    <article class="col-sm-12 col-md-12 col-lg-6">
+                       
+                        <!-- Widget ID (each widget will need unique ID)-->
+                        <div class="jarviswidget jarviswidget-color-blue" id="wid-id-1" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                            <!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+
+                        -->
+                            <header>
+                                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                <h2>{{title}} </h2>
+
+                                <div class="widget-toolbar">
+                                    <button class="btn btn-info btn-sm" data-ng-click="loadModule()">Refresh <i class="glyphicon glyphicon-refresh"></i></button>
+                                    
+                                </div>
+
+                            </header>
+
+                            <!-- widget div-->
+                            <div>
+
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+                               
+                                </div>
+                                <!-- end widget edit box -->
+                                <!-- widget content -->
+
+                                
+                                <div class="widget-body no-padding">
+                                    <!--<div class="text-left">
+                                        <button class="btn btn-success" ng-click="createGroup()">
+                                            <i class="fa fa-plus"></i> <span class="hidden-mobile">Create</span>
+                                        </button>
+                                      
+                                    </div>-->
+
+                                    <form class="form-horizontal">
+                                        <br/>
+                                        <fieldset>
+
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label">Module</label>
+                                                <div class="col-md-5">
+                                                    <input class="form-control" placeholder="Module name" type="text" readonly ng-model="moduleModel.Alias" style="width:200px;background-color:#eee">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button class="btn btn-default" type="button" ng-click="cancel()">
+                                                            Back
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        
+
+                                    </form>
+                                   
+                                </div>
+                                <!-- end widget content -->
+
+                            </div>
+                            <!-- end widget div -->
+
+                        </div>
+                        <!-- end widget -->
+
+
+                    </article>
+                    <!-- WIDGET END -->
+
+                </div>
+
+                <!-- end row -->
+                <!-- end row -->
+
+            </section>
+            <!-- end widget grid -->
+
+            <div ng-show="init && moduleModel !== 0">
+                <!-- widget grid -->
+                <section id="wdtMenu" class="">
+
+                    <!-- row -->
+                    <div class="row">
+
+                        <!-- NEW WIDGET START -->
+                        <article class="col-sm-12 col-md-12 col-lg-6">
+
+                            <!-- Widget ID (each widget will need unique ID)-->
+                            <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                                <!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+
+                        -->
+                                <header>
+                                    <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                    <h2>Menus</h2>
+
+                                    <div class="widget-toolbar">
+                                        <!--<button class="btn btn-info btn-sm" data-ng-click="loadGroupRoles()">Refresh <i class="glyphicon glyphicon-refresh"></i></button>-->
+
+                                    </div>
+
+                                </header>
+
+                                <!-- widget div-->
+                                <div>
+
+                                    <!-- widget edit box -->
+                                    <div class="jarviswidget-editbox">
+                                        <!-- This area used as dropdown edit box -->
+
+                                    </div>
+                                    <!-- end widget edit box -->
+                                    <!-- widget content -->
+
+
+                                    <div class="widget-body no-padding">
+                                        <!--<div class="text-left">
+                                    <button class="btn btn-success" ng-click="createGroup()">
+                                        <i class="fa fa-plus"></i> <span class="hidden-mobile">Create</span>
+                                    </button>
+
+                                </div>-->
+
+                                        <div class="widget-body-toolbar">
+
+                                        </div>
+
+                                        <div ng-show="init && menuModels.length > 0">
+
+                                            <div ng-show="viewModelHelper.modelIsValid == false" class="alert alert-danger">
+                                                <h4 class="alert-heading">Errors!</h4>
+                                                <ul data-ng-repeat="e in viewModelHelper.modelErrors">
+                                                    <li>{{ e }}</li>
+                                                </ul>
+                                            </div>
+
+                                            <table id="menuTable" class="table table-hover table-striped table-bordered table-advanced tablesorter display table-condensed" width="100%">
+
+                                                <thead>
+                                                    <tr>
+                                                        <!--<th class="hasinput" style="width:100px">
+                                                            <input type="text" class="form-control" placeholder="Filter Code" />
+                                                        </th>-->
+                                                        <th class="hasinput" style="width:150px">
+                                                            <input type="text" class="form-control" placeholder="Filter Name" />
+                                                        </th>
+
+                                                        <!--<th class="hasinput" style="width:200px">
+                                                            <input type="text" class="form-control" placeholder="Filter Module" />
+                                                        </th>-->
+                                                    </tr>
+                                                    <tr>
+                                                        <!--<th width="100px">Code</th>-->
+                                                        <th width="200px">Name</th>
+                                                        <!--<th width="200px">Module</th>-->
+
+                                                        <th width="70px">Status</th>
+                                                        
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr ng-repeat="menu in menuModels">
+                                                     
+                                                        <td>{{menu.Alias}}</td>
+                                                        <td><button type="button" class="btn btn-success btn-xs" ng-click="updateMenuStatus(menu.Active)">{{menuStatus(menu.Active)}}</button></td>
+                                                        
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+
+                                        <h4 class="alert alert-info" ng-show="init && menuModels.length == 0">
+                                            Click create to create a menu.The menu is use to manage module's menus.
+                                        </h4>
+
+                                    </div>
+                                    <!-- end widget content -->
+
+                                </div>
+                                <!-- end widget div -->
+
+                            </div>
+                            <!-- end widget -->
+                        </article>
+                        <!-- WIDGET END -->
+
+                    </div>
+
+                    <!-- end row -->
+                    <!-- end row -->
+
+                </section>
+                <!-- end widget grid -->
+            </div>
+
+            </div>
+        <!-- END MAIN CONTENT -->
+        <div>
+         
+        </div>
+    </div>
+    <div ng-switch-when="success">
+        
+    </div>
+</div>

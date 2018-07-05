@@ -1,0 +1,290 @@
+﻿<div ng-switch="viewMode">
+    <div ng-switch-when="modulelist">
+
+        <!-- MAIN CONTENT -->
+        <div id="content">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                    <!--<h1 class="page-title txt-color-blueDark">
+                        <i class="fa fa-table fa-fw "></i>
+                        Settings
+                        <span>
+                            >
+                            All Modules
+                        </span>
+                    </h1>-->
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+
+                </div>
+            </div>
+
+            <!-- widget grid -->
+            <section id="widget-grid" class="">
+
+                <!-- row -->
+                <div class="row">
+
+                    <!-- NEW WIDGET START -->
+                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+
+                        <!-- Widget ID (each widget will need unique ID)-->
+                        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+                            <!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+
+                        -->
+                            <header>
+                                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                <h2>Modules </h2>
+
+                                <div class="widget-toolbar">
+                                    <button class="btn btn-info btn-sm" data-ng-click="availableModules()">Refresh <i class="glyphicon glyphicon-refresh"></i></button>
+
+                                </div>
+
+                            </header>
+
+                            <!-- widget div-->
+                            <div>
+
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+
+                                </div>
+                                <!-- end widget edit box -->
+                                <!-- widget content -->
+                                <div class="widget-body no-padding">
+
+                                    <div class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="tabs">
+                                        <ul role="tablist" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                                            <li aria-selected="true" aria-labelledby="ui-id-25" aria-controls="Master" tabindex="-1" role="tab" class="ui-state-default ui-corner-top">
+                                                <a id="ui-id-25" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#master">License Info</a>
+                                            </li>
+
+                                            <li aria-selected="false" aria-labelledby="ui-id-26" aria-controls="licenses" tabindex="-1" role="tab" class="ui-state-default ui-corner-top">
+                                                <a id="ui-id-26" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#licenses">Licenses</a>
+                                            </li>
+                                            <li aria-selected="false" aria-labelledby="ui-id-26" aria-controls="activation" tabindex="-1" role="tab" class="ui-state-default ui-corner-top">
+                                                <a id="ui-id-26" tabindex="-1" role="presentation" class="ui-tabs-anchor" href="#activation">Module Activation</a>
+                                            </li>
+
+
+                                        </ul>
+
+                                        <!-- License Info div -->
+
+                                        <div aria-hidden="true" aria-expanded="false" style="display: none;" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-25" id="master">
+                                            <form>
+                                                <fieldset>
+                                                    <legend>License Information</legend>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label">Institution Name</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" value ="Smart MFB ERP" ng-readonly placeholder="Institution Name" type="text">
+                                                        </div>
+                                                    </div><br/><br />
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label">Contact</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" value ="Daniel Funso" ng-readonly placeholder="Contact Person" type="text">
+                                                        </div>
+                                                    </div><br /><br />
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label">Phone Number</label>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" value ="08034441916" ng-readonly placeholder="Phone Number" type="tel">
+                                                        </div>
+                                                    </div><br /><br />
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label">Email</label>
+
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" value ="eseglory@hotmail.com" ng-readonly  placeholder="Email Address" type="email">
+                                                        </div>
+                                                    </div>
+                                               </fieldset>
+                                                <!--<div class="form-actions">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <button class="btn btn-primary" type="submit">
+                                                                <i class="fa fa-save"></i>
+                                                                Save
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
+
+                                            </form>
+                                        </div>
+
+                                        <!-- Licenses div -->
+
+                                        <div aria-hidden="true" aria-expanded="false" style="display: none;" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-26" id="licenses">
+
+                                            <div ng-show="init && modules.length > 0">
+                                                <table id="" class="table table-hover table-striped table-bordered table-advanced tablesorter display table-condensed" width="100%">
+
+                                                    <thead>
+
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Name</th>
+                                                            <th>Version</th>
+                                                            <th>State</th>
+                                                            <th>Start Date</th>
+                                                            <th>End Date</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>1</th>
+                                                            <th>Educ8e</th>
+                                                            <th>1.0</th>
+                                                            <th>Active</th>
+                                                            <th>03/05/2017</th>
+                                                            <th>End Date</th>
+
+                                                            <td>
+                                                                <button type="button" class="btn btn-success btn-xs" ng-readonly>
+                                                                    <i class="glyphicon glyphicon-search"></i>
+                                                                    View
+                                                                </button>
+
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+
+                                            <h4 class="alert alert-info" ng-show="init && modules.length == 0">
+                                                No License Found.
+                                            </h4>
+                                        </div>
+
+                                        <!-- Module Activation -->
+
+                                        <div aria-hidden="true" aria-expanded="false" style="display: none;" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-26" id="activation">
+
+                                            <div ng-show="init && modules.length > 0">
+                                                <table id="moduleTable" class="table table-hover table-striped table-bordered table-advanced tablesorter display table-condensed" width="100%">
+
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="hasinput">
+
+                                                            </th>
+                                                            <th class="hasinput">
+                                                                <input type="text" class="form-control" placeholder="Filter Name" />
+                                                            </th>
+                                                            <!--<th class="hasinput">
+                                                                <input type="text" class="form-control" placeholder="Filter Category" />
+                                                            </th>
+                                                            <th class="hasinput">
+                                                                <input type="text" class="form-control" placeholder="Filter Version" />
+                                                            </th>
+                                                            <th class="hasinput">
+                                                                <input type="text" class="form-control" placeholder="Filter State" />
+                                                            </th>-->
+                                                        </tr>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Name</th>
+                                                            <th>Edition</th>
+                                                            <th>Serial No.</th>
+                                                            <th>State</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr ng-repeat="module in modules">
+                                                            <td>{{$index + 1}}</td>
+                                                            <td>{{module.Alias}}</td>
+                                                            <!--<td>{{module.ModuleCategoryAlias}}</td>-->
+                                                            <td>Standard</td>
+                                                            <td>2445566667BC1</td>
+                                                            <td>{{moduleStatus(module.Active)}}</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success btn-xs" ng-click="activateModule(module.ModuleId)" ng-show="module.Active == false">
+                                                                    <i class="glyphicon glyphicon-check"></i>
+                                                                    Activate
+                                                                </button>
+                                                                <button type="button" class="btn btn-danger btn-xs" ng-click="deactivateModule(module.ModuleId)" ng-show="module.Active == true">
+                                                                    <i class="glyphicon glyphicon-eject"></i>
+                                                                    De-Activate
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                             </div>
+
+                                            <h4 class="alert alert-info" ng-show="init && modules.length == 0">
+                                                No Modules Found.
+                                            </h4>
+                                       </div>
+
+                                        <script>
+                            $('#tabs').tabs();
+
+                            /*
+                             *  Simple tabs adding and removing
+                             */
+
+                            $('#tabs2').tabs();
+                                        </script>
+                                    </div>
+
+                                </div>
+                                <!-- end widget content -->
+
+                            </div>
+                            <!-- end widget div -->
+
+                        </div>
+                        <!-- end widget -->
+
+
+                    </article>
+                    <!-- WIDGET END -->
+
+                </div>
+
+                <!-- end row -->
+                <!-- end row -->
+
+            </section>
+            <!-- end widget grid -->
+
+        </div>
+        <!-- END MAIN CONTENT -->
+
+
+        <div ng-show="init && modules.length == 0">
+            <h2>There are no available modules.</h2>
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <div ng-switch-when="success">
+
+    </div>
+</div>
